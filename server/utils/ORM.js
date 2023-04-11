@@ -22,7 +22,7 @@ class ORM {
 			dialect: "sqlite",
 			storage: "localdev.sqlite"
 		});
-        orm.sync({force: true});
+        orm.sync();
         this.orm = orm;
         global.orm = orm;
     }
