@@ -1,10 +1,6 @@
-// import sqlite3 from "sqlite3"
-// import mysql2 from "mysql2";
-// import { Sequelize } from "sequelize"
-
-const sqlite3 = require("sqlite3"),
-    mysql2 = require("mysql2"),
-    Sequelize = require("sequelize");
+import sqlite3 from "sqlite3";
+import mysql2 from "mysql2";
+import { Sequelize } from "sequelize";
 
 class ORM {
     constructor(orm = global.orm) {

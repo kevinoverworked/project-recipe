@@ -1,4 +1,3 @@
-// const RecipeModel = require("../../../models/RecipeModel");
 import { NextResponse } from 'next/server';
 import RecipeModel from "../../../models/RecipeModel";
 
