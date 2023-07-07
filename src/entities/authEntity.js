@@ -3,18 +3,18 @@ import ORM from "../utils/ORM";
 
 const orm = new ORM().connect();
 
-let recipeEntity = orm.define(
-    "recipe",
+let authEntity = orm.define(
+    "authtokens",
     {
         id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        recipe_name: {
+        token: {
             type: Sequelize.TEXT
         },
-        ingredients: {
+        owner: {
             type: Sequelize.TEXT
         },
         directions: {
@@ -32,4 +32,4 @@ let recipeEntity = orm.define(
     }
 );
 
-module.exports = recipeEntity;
+module.exports = authEntity;

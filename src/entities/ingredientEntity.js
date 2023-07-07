@@ -3,21 +3,18 @@ import ORM from "../utils/ORM";
 
 const orm = new ORM().connect();
 
-let recipeEntity = orm.define(
-    "recipe",
+let ingredientEntity = orm.define(
+    "ingredients",
     {
         id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        recipe_name: {
+        name: {
             type: Sequelize.TEXT
         },
-        ingredients: {
-            type: Sequelize.TEXT
-        },
-        directions: {
+        category: {
             type: Sequelize.TEXT
         },
         createdBy: {
@@ -32,4 +29,4 @@ let recipeEntity = orm.define(
     }
 );
 
-module.exports = recipeEntity;
+module.exports = ingredientEntity;
