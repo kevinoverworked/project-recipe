@@ -4,7 +4,7 @@ import ORM from "../utils/ORM";
 const orm = new ORM().connect();
 
 let userEntity = orm.define(
-    "users",
+    "user",
     {
         id: {
             type: Sequelize.INTEGER,
@@ -23,18 +23,16 @@ let userEntity = orm.define(
             type: Sequelize.TEXT,
             allowNull: false
         },
-        auth_id: {
+        secret_id: {
             type: Sequelize.TEXT,
-            allowNull: false
+            allowNull: true
         },
         type: {
             type: Sequelize.TEXT,
-            allowNull: false,
             defaultValue: "user"
         },
         status: {
             type: Sequelize.TEXT,
-            allowNull: false,
             defaultValue: "active"
         },
         createdBy: {

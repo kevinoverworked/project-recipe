@@ -3,22 +3,21 @@ import ORM from "../utils/ORM";
 
 const orm = new ORM().connect();
 
-let authEntity = orm.define(
-    "authtokens",
+let secretsEntity = orm.define(
+    "secrets",
     {
         id: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.UUID,
             primaryKey: true,
-            autoIncrement: true
+            defaultValue: Sequelize.UUIDV4
         },
         token: {
-            type: Sequelize.TEXT
+            type: Sequelize.TEXT,
+            allowNull: false
         },
         owner: {
-            type: Sequelize.TEXT
-        },
-        directions: {
-            type: Sequelize.TEXT
+            type: Sequelize.TEXT,
+            allowNull: false
         },
         createdBy: {
 			type: Sequelize.STRING
@@ -32,4 +31,4 @@ let authEntity = orm.define(
     }
 );
 
-module.exports = authEntity;
+module.exports = secretsEntity;
